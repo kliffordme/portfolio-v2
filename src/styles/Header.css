@@ -1,0 +1,81 @@
+/* Shared button style */
+.tilt-btn {
+  font-size: 12px;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  transition: 
+    transform 250ms ease,
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+/* Hover: move upward */
+.tilt-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Pressed: snap back */
+.tilt-btn:active {
+  transform: translateY(0);
+  transition-duration: 100ms;
+}
+
+/* --- Variants --- */
+
+/* Call button (black) */
+.tilt-btn.call {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+.tilt-btn.call:hover {
+  background: #222;
+  border-color: #222;
+}
+
+/* Email button (white) */
+.tilt-btn.email {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+.tilt-btn.email:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+/* Dark theme adjustments */
+.App.dark .tilt-btn.call {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+.App.dark .tilt-btn.call:hover {
+  background: #ddd;
+  border-color: #ddd;
+}
+
+.App.dark .tilt-btn.email {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+.App.dark .tilt-btn.email:hover {
+  background: #333;
+  border-color: #555;
+}
+
+/* Focus ring for accessibility */
+.tilt-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.App.dark .tilt-btn:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
