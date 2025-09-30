@@ -1,5 +1,6 @@
 import About from "../components/About";
 import ExperienceTimeline from "../components/ExperienceTimeline";
+import RecentProjects from "../components/Projects";
 import TechStack from "../components/TechStack";
 
 function Home() {
@@ -24,8 +25,7 @@ function Home() {
         Continuously learning new skills through courses, exploring emerging technologies, and staying updated with industry trends to enhance problem-solving, adaptability, and professional growth.
       </div>
       <div className="col-span-1 md:col-span-2 border border-[#eee] p-6 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Recent Projects</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eos doloremque enim ratione, accusamus suscipit obcaecati dolores? Nostrum beatae non culpa reprehenderit, libero similique magnam perferendis. Odit, esse. Perferendis hic perspiciatis quidem. Aliquam fuga ex quos quaerat quis rerum ducimus modi delectus similique quas eum, fugit aperiam quisquam veritatis dolorum!
+        <RecentProjects />
       </div>
       <div className="col-span-1 md:col-span-3 border border-[#eee] p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">Recommendations</h2>

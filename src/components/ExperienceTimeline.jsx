@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../App";
-import experienceIcon from '../assets/experience.svg';
+import experienceIcon from "../assets/experience.svg";
 
 const experiences = [
-  { id: 1, title: "Internship", year: "2020", completed: true },
-  { id: 2, title: "Junior Developer", year: "2021", completed: true },
-  { id: 3, title: "Mid-level Developer", year: "2023", completed: false },
-  { id: 4, title: "Software Engineer", year: "2025", completed: false },
-  { id: 4, title: "Senior Developer", year: "2025", completed: false },
-  { id: 4, title: "Senior Developer", year: "2025", completed: false },
-  { id: 4, title: "Senior Developer", year: "2025", completed: false },
+  { id: 1, title: "Internship", year: "2019", company: "KSM Outsourcing Smart Solutions", completed: true },
+  { id: 1, title: "Senior Developer", year: "2019", company: "Mindanao Business and IT Solutions Corp", completed: true },
+  { id: 2, title: "Mid Level Developer", year: "2023", company: "Red Core I.T Solutions", completed: true },
+  { id: 3, title: "Software Engineer", year: "2023", company: "Unicare Labs PH", completed: false },
+  { id: 4, title: "Software Engineer", year: "2023", company: "BNN Technologies", completed: false },
+  { id: 5, title: "Senior Frontend Developer", year: "2025", company: "Cayuse", completed: false },
 ];
 
 export default function ExperienceTimeline() {
@@ -18,7 +17,7 @@ export default function ExperienceTimeline() {
   // Theme-based colors
   const lineColor = theme === "dark" ? "#444" : "#ddd";
   const completedColor = theme === "light" ? "#fff" : "#222";
-  const currentColor = theme === "dark" ? "#3498db" : "#3498db";
+  const currentColor = "#3498db"; // Same for both themes
   const textColor = theme === "dark" ? "text-white" : "text-black";
   const yearText = theme === "dark" ? "text-gray-300" : "text-gray-700";
 
@@ -36,49 +35,50 @@ export default function ExperienceTimeline() {
             width: 25,
             height: 25,
             marginBottom: 3,
-            filter: theme === 'dark' ? 'invert(1) brightness(2)' : 'none',
-            // verticalAlign: 'middle',
+            filter: theme === "dark" ? "invert(1) brightness(2)" : "none",
           }}
           title="Experience"
         />
         Experience
       </h2>
-      <div className="relative flex flex-col items-start pb-4 px-2">
-      {/* Vertical line */}
-      <div
-        className="absolute left-4 top-8 bottom-4"
-        style={{
-          width: "2px",
-          background: lineColor,
-          zIndex: 0,
-        }}
-      />
-      <ul className="space-y-8 w-full">
-        {reversedExperiences.map((exp, idx) => (
-          <li key={exp.id} className="relative flex items-center">
-            {/* Progress circle */}
-            <span
-              className={`absolute left-0 w-4 h-4 rounded-full flex items-center justify-center`}
-              style={{
-                background: idx === 0 ? currentColor : completedColor,
-                border: `2px solid ${lineColor}`,
-                zIndex: 1,
-              }}
-            ></span>
-            {/* Experience info */}
-            <div className="ml-8 mt-3 flex flex-col">
-              <span className={`font-semibold text-[13px] ${textColor}`}>
-                {exp.title}
-              </span>
-              <span className={`text-[11px] ${yearText}`}>
-                Red Core I.T Solutions {exp.year}
-              </span>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-    </>
 
+      <div className="relative flex flex-col items-start pb-4 px-2">
+        {/* Vertical line */}
+        <div
+          className="absolute left-4 top-8 bottom-0"
+          style={{
+            width: "2px",
+            background: lineColor,
+            zIndex: 0,
+          }}
+        />
+
+        <ul className="space-y-12 w-full">
+          {reversedExperiences.map((exp, idx) => (
+            <li key={exp.id} className="relative flex items-center">
+              {/* Progress circle */}
+              <span
+                className="absolute left-0 w-4 h-4 rounded-full flex items-center justify-center"
+                style={{
+                  background: idx === 0 ? currentColor : completedColor,
+                  border: `2px solid ${lineColor}`,
+                  zIndex: 1,
+                }}
+              ></span>
+
+              {/* Experience info */}
+              <div className="ml-8 mt-3 flex flex-col">
+                <span className={`font-semibold text-[13px] ${textColor}`}>
+                  {exp.title}
+                </span>
+                <span className={`text-[11px] ${yearText}`}>
+                  {exp.company} • {exp.year}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
