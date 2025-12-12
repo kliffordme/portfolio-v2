@@ -3,14 +3,17 @@ import { ThemeContext } from '../App';
 import { Link } from 'react-router-dom';
 import profileImg from '../assets/ford.jpg';
 import pinIcon from '../assets/pin.svg';
-import checkIcon from '../assets/check.svg';
+import CheckIcon from '../assets/check.jsx';
+import sunIcon from '../assets/sun.svg';
+import moonIcon from '../assets/moon.svg';
+
 import '../styles/Header.css'; // <-- import the CSS file
 
 function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   // Set SVG filter based on theme
-  const pinFilter =
+  const iconFilter =
     theme === 'dark'
       ? 'invert(1) brightness(2)' // makes icon light for dark mode
       : 'none'; // normal for light mode
@@ -33,9 +36,31 @@ function Header() {
         >
           <span className="toggle-slider">
             {theme === 'light' ? (
-              <span className="icon-sun">☀️</span>
+              <span className="icon-sun">
+              <img
+                src={sunIcon}
+                alt="sun-icon"
+                style={{
+                  width: 14,
+                  height: 14,
+                  filter: iconFilter,
+                  transition: 'filter 0.3s',
+                }}
+              />
+              </span>
             ) : (
-              <span className="icon-moon">🌙</span>
+              <span className="icon-moon">
+                <img
+                  src={moonIcon}
+                  alt="moon-icon"
+                  style={{
+                    width: 14,
+                    height: 14,
+                    filter: theme === "dark" ? "white" : "none",
+                    transition: 'filter 0.3s',
+                  }}
+                />
+              </span>
             )}
           </span>
         </button>
@@ -45,23 +70,22 @@ function Header() {
           <img
             src={profileImg}
             alt="Profile"
-            style={{ width: 130, height: 150, borderRadius: '10%', marginLeft: 16 }}
+            style={{ width: 125, height: 150, borderRadius: '10%', marginLeft: 16 }}
           />
         </div>
         <div>
           <b style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             Klifford Orquillas
-            <img
-              src={checkIcon}
-              alt="Verified"
-              style={{
-                width: 18,
-                height: 18,
-                marginBottom: 2,
-                verticalAlign: 'middle',
-              }}
-              title="Verified"
-            />
+            <CheckIcon
+            style={{
+              width: 18,
+              height: 18,
+              marginBottom: 2,
+              verticalAlign: 'middle',
+              color: "#1d9bf0",   // ✅ sets the fill
+            }}
+            title="Verified"
+          />
 
           </b>
           <span className="text-[12px] my-1" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -71,7 +95,7 @@ function Header() {
               style={{
                 width: 14,
                 height: 14,
-                filter: pinFilter,
+                filter: iconFilter,
                 transition: 'filter 0.3s',
               }}
             />

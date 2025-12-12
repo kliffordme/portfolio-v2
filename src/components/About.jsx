@@ -8,13 +8,13 @@ function About() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+      <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
           <img
             src={suitCaseIcon}
             alt="Suitcase"
             style={{
-              width: 25,
-              height: 25,
+              width: 20,
+              height: 20,
               marginBottom: 3,
               filter: theme === 'dark' ? 'invert(1) brightness(2)' : 'none',
               // verticalAlign: 'middle',

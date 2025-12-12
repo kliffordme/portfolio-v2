@@ -27,13 +27,13 @@ export default function ExperienceTimeline() {
   return (
     <>
       {/* Title */}
-      <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
+      <h2 className="text-xl font-bold flex items-center gap-2 mb-4">
         <img
           src={experienceIcon}
           alt="Experience"
           style={{
-            width: 25,
-            height: 25,
+            width: 20,
+            height: 20,
             marginBottom: 3,
             filter: theme === "dark" ? "invert(1) brightness(2)" : "none",
           }}
@@ -45,7 +45,7 @@ export default function ExperienceTimeline() {
       <div className="relative flex flex-col items-start pb-4 px-2">
         {/* Vertical line */}
         <div
-          className="absolute left-4 top-8 bottom-0"
+          className="absolute left-4 top-10 bottom-10"
           style={{
             width: "2px",
             background: lineColor,
@@ -53,7 +53,7 @@ export default function ExperienceTimeline() {
           }}
         />
 
-        <ul className="space-y-12 w-full">
+        <ul className="space-y-11 mt-4 w-full">
           {reversedExperiences.map((exp, idx) => (
             <li key={exp.id} className="relative flex items-center">
               {/* Progress circle */}
@@ -67,12 +67,12 @@ export default function ExperienceTimeline() {
               ></span>
 
               {/* Experience info */}
-              <div className="ml-8 mt-3 flex flex-col">
+              <div className="ml-8 mt-2 flex flex-col">
                 <span className={`font-semibold text-[13px] ${textColor}`}>
                   {exp.title}
                 </span>
                 <span className={`text-[11px] ${yearText}`}>
-                  {exp.company} • {exp.year}
+                  {exp.company} <br/> {exp.year}
                 </span>
               </div>
             </li>

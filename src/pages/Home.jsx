@@ -2,6 +2,8 @@ import About from "../components/About";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import RecentProjects from "../components/Projects";
 import TechStack from "../components/TechStack";
+import Recommendations from "../components/Recommendation";
+import RecentCertifications from "../components/Certifications";
 
 function Home() {
   return (
@@ -20,17 +22,24 @@ function Home() {
       <div className="col-span-1 md:col-span-2 border border-[#eee] p-6 rounded-lg">
         <TechStack />
       </div>
+
       <div className="col-span-1 md:col-span-1 border border-[#eee] p-6 rounded-lg">
         <h2 className="text-xl font-bold mb-4">Beyond Coding</h2>
-        Continuously learning new skills through courses, exploring emerging technologies, and staying updated with industry trends to enhance problem-solving, adaptability, and professional growth.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sapiente quam corrupti fugit repellat excepturi dicta exercitationem sit perferendis est?
+        <br />
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, harum?
       </div>
+
       <div className="col-span-1 md:col-span-2 border border-[#eee] p-6 rounded-lg">
         <RecentProjects />
       </div>
-      <div className="col-span-1 md:col-span-3 border border-[#eee] p-6 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Recommendations</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est illum omnis amet delectus qui maxime, sequi quidem modi impedit necessitatibus soluta, dolorum aspernatur recusandae autem ad eum. Aspernatur animi doloremque adipisci mollitia asperiores, in accusamus fugit dolore eaque dolorem optio tenetur similique, autem ut, natus quos amet omnis quia tempore.
+
+      <div className="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <RecentCertifications />
+        <Recommendations />
       </div>
+
     </div>
   );
 }

@@ -36,7 +36,6 @@ export default function RecentProjects() {
   const { theme } = useContext(ThemeContext);
 
   // Theme colors
-  const cardBg = theme === "dark" ? "bg-[#111]" : "bg-white";
   const cardBorder = theme === "dark" ? "border-[#333]" : "border-[#ddd]";
   const textColor = theme === "dark" ? "text-white" : "text-black";
   const descColor = theme === "dark" ? "text-gray-400" : "text-gray-700";
@@ -44,12 +43,12 @@ export default function RecentProjects() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4">Recent Projects</h2>
+      <h2 className="text-xl font-bold mb-4">Recent Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {projects.map((proj) => (
           <div
             key={proj.id}
-            className={`p-4 border ${cardBorder} rounded-lg ${cardBg}`}
+            className={`p-4 border ${cardBorder} rounded-lg`}
           >
             <h3 className={`text-lg font-semibold ${textColor}`}>{proj.title}</h3>
             <p className={`text-sm mb-2 ${descColor}`}>{proj.desc}</p>

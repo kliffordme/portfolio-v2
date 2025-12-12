@@ -7,22 +7,22 @@ function TechStack() {
 
   // Badge styles for light and dark
   const badgeLight =
-    "px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200";
+    "px-3 py-1 rounded-sm text-gray-700 text-xs font-medium border border-gray-200";
   const badgeDark =
-    "px-3 py-1 rounded-full bg-[#222] text-gray-200 text-xs font-medium border border-[#444]";
+    "px-3 py-1 rounded-sm bg-[#222] text-gray-200 text-xs font-medium border border-[#444]";
 
   const badgeClass = theme === "dark" ? badgeDark : badgeLight;
 
   return (
     <>
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-2xl font-bold flex items-center gap-2">
+        <h2 className="text-xl font-bold flex items-center gap-2">
           <img
             src={techStackIcon}
             alt="Tech-stack"
             style={{
-              width: 25,
-              height: 25,
+              width: 20,
+              height: 20,
               marginBottom: 3,
               filter: theme === "dark" ? "invert(1) brightness(2)" : "none",
             }}
